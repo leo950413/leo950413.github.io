@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/tags/ctf-writeup/</loc>
+    <loc>https://leo950413.github.io/tags/ctf-writeup/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/post/ductf-writeup/</loc>
+    <loc>https://leo950413.github.io/post/ductf-writeup/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/post/</loc>
+    <loc>https://leo950413.github.io/post/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/pwn/</loc>
+    <loc>https://leo950413.github.io/tags/pwn/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/</loc>
+    <loc>https://leo950413.github.io/tags/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/</loc>
+    <loc>https://leo950413.github.io/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/github/</loc>
+    <loc>https://leo950413.github.io/tags/github/</loc>
     <lastmod>2024-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/tags/hugo/</loc>
+    <loc>https://leo950413.github.io/tags/hugo/</loc>
     <lastmod>2024-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/post/my-first-post/</loc>
+    <loc>https://leo950413.github.io/post/my-first-post/</loc>
     <lastmod>2024-07-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/about/</loc>
+    <loc>https://leo950413.github.io/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.org/categories/</loc>
+    <loc>https://leo950413.github.io/categories/</loc>
   </url>
 </urlset>

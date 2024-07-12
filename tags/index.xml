@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Tech101</title>
-    <link>https://example.org/tags/</link>
+    <link>https://leo950413.github.io/tags/</link>
     <description>Recent content in Tags on Tech101</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://leo950413.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CTF Writeup</title>
-      <link>https://example.org/tags/ctf-writeup/</link>
+      <link>https://leo950413.github.io/tags/ctf-writeup/</link>
       <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/ctf-writeup/</guid>
+      <guid>https://leo950413.github.io/tags/ctf-writeup/</guid>
       <description></description>
     </item>
     <item>
       <title>Pwn</title>
-      <link>https://example.org/tags/pwn/</link>
+      <link>https://leo950413.github.io/tags/pwn/</link>
       <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/pwn/</guid>
+      <guid>https://leo950413.github.io/tags/pwn/</guid>
       <description></description>
     </item>
     <item>
       <title>Github</title>
-      <link>https://example.org/tags/github/</link>
+      <link>https://leo950413.github.io/tags/github/</link>
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/github/</guid>
+      <guid>https://leo950413.github.io/tags/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>https://example.org/tags/hugo/</link>
+      <link>https://leo950413.github.io/tags/hugo/</link>
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/tags/hugo/</guid>
+      <guid>https://leo950413.github.io/tags/hugo/</guid>
       <description></description>
     </item>
   </channel>

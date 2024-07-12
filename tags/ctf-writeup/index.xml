@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CTF Writeup on Tech101</title>
-    <link>https://example.org/tags/ctf-writeup/</link>
+    <link>https://leo950413.github.io/tags/ctf-writeup/</link>
     <description>Recent content in CTF Writeup on Tech101</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://example.org/tags/ctf-writeup/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://leo950413.github.io/tags/ctf-writeup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DUCTF writeup</title>
-      <link>https://example.org/post/ductf-writeup/</link>
+      <link>https://leo950413.github.io/post/ductf-writeup/</link>
       <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://example.org/post/ductf-writeup/</guid>
+      <guid>https://leo950413.github.io/post/ductf-writeup/</guid>
       <description>walk through vector overflow</description>
     </item>
   </channel>
