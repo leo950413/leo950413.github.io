@@ -166,8 +166,8 @@
   <meta itemprop="description" content="walk through vector overflow">
   <meta itemprop="datePublished" content="2024-07-11T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-07-11T00:00:00+00:00">
-  <meta itemprop="wordCount" content="256">
-  <meta itemprop="keywords" content="CTF Writeup,Pwn">
+  <meta itemprop="wordCount" content="582">
+  <meta itemprop="keywords" content="CTF Writeup,Pwn,Crypto">
   
   <meta property="og:url" content="https://leo950413.github.io/post/ductf-writeup/">
   <meta property="og:site_name" content="Tech101">
@@ -180,6 +180,7 @@
     <meta property="article:modified_time" content="2024-07-11T00:00:00+00:00">
     <meta property="article:tag" content="CTF Writeup">
     <meta property="article:tag" content="Pwn">
+    <meta property="article:tag" content="Crypto">
 
   
   
@@ -362,6 +363,53 @@
 </span></span><span style="display:flex;"><span>conn <span style="color:#f92672">=</span> connect(<span style="color:#e6db74">&#34;2024.ductf.dev&#34;</span>, <span style="color:#ae81ff">30013</span>)
 </span></span><span style="display:flex;"><span>conn<span style="color:#f92672">.</span>sendline(payload)
 </span></span><span style="display:flex;"><span>conn<span style="color:#f92672">.</span>interactive()
+</span></span></code></pre></div><h1 id="challenge-name-decrypt-than-evil">Challenge Name: decrypt than evil</h1>
+<h2 id="brief-overview">Brief overview</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>        ct <span style="color:#f92672">=</span> bytes<span style="color:#f92672">.</span>fromhex(input(<span style="color:#e6db74">&#39;ct: &#39;</span>))
+</span></span><span style="display:flex;"><span>        aes <span style="color:#f92672">=</span> AES<span style="color:#f92672">.</span>new(KEY, AES<span style="color:#f92672">.</span>MODE_CFB, IV, segment_size<span style="color:#f92672">=</span><span style="color:#ae81ff">128</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            print(eval(aes<span style="color:#f92672">.</span>decrypt(ct)))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">&#39;invalid ct!&#39;</span>)
+</span></span></code></pre></div><p>This Python script uses the AES encryption algorithm in CFB (Cipher Feedback) mode to decrypt a ciphertext provided by the user, but the problem is that KEY and IV are two random value.</p>
+<h2 id="eval">eval()</h2>
+<blockquote>
+<p>The expression argument is parsed and evaluated as a Python expression (technically speaking, a condition list) using the globals and locals dictionaries as global and local namespace.</p>
+</blockquote>
+<p>According to the documentation , eval() can access locals , which is what we want , so the overall solution is to brute-force for 4 byte make the decrypt output <!-- raw HTML omitted -->FLAG<!-- raw HTML omitted --> , so print(eva(&ldquo;FLAG&rdquo;)) will print the flag value. One way we can solve the problem is to make output value all numeric character, then eval()  will treat it as interger, and output the value instead of throwing error.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(eval(<span style="color:#e6db74">&#34;1234&#34;</span>))
+</span></span><span style="display:flex;"><span>print(eval(<span style="color:#e6db74">&#34; 1234&#34;</span>))
+</span></span></code></pre></div><p>The above two statement all output same string <!-- raw HTML omitted -->1234<!-- raw HTML omitted --> , while we brute force the problem , we must consider the output length match the input legth.</p>
+<h2 id="aes-cfb-mode">AES CFB mode</h2>
+<p><img src="./images/CFB-Decryption.png" alt="CFB mode">
+As the picture shows, CFB mode first uses AES to encrypt the IV with the key, then XORs the plaintext with the output. Regardless of the IV and key, the encryption output will be 16 bytes. Because we only want <!-- raw HTML omitted -->FLAG<!-- raw HTML omitted --> , therefore we don&rsquo;t need to know all 16 bytes, 4 bytes will be enough.</p>
+<h2 id="solution-scripts">Solution scripts</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pwn
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> random
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#io = pwn.process([&#34;python3&#34;, &#34;decrypt-then-eval.py&#34;])</span>
+</span></span><span style="display:flex;"><span>io <span style="color:#f92672">=</span> pwn<span style="color:#f92672">.</span>remote(<span style="color:#e6db74">&#39;2024.ductf.dev&#39;</span>, <span style="color:#ae81ff">30020</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>enc <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>res <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> len(res) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>:
+</span></span><span style="display:flex;"><span>        i <span style="color:#f92672">=</span> random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span> ,<span style="color:#ae81ff">255</span>)
+</span></span><span style="display:flex;"><span>        tmp <span style="color:#f92672">=</span> payload <span style="color:#f92672">+</span> bytes([i])
+</span></span><span style="display:flex;"><span>        io<span style="color:#f92672">.</span>recv()
+</span></span><span style="display:flex;"><span>        io<span style="color:#f92672">.</span>sendline(tmp<span style="color:#f92672">.</span>hex()<span style="color:#f92672">.</span>encode())
+</span></span><span style="display:flex;"><span>        res <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>recvline()[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> all(i <span style="color:#f92672">in</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;123456789&#39;</span> <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> res) <span style="color:#f92672">and</span> len(res) <span style="color:#f92672">==</span> len(tmp): <span style="color:#75715e"># prevent space or some wierd character</span>
+</span></span><span style="display:flex;"><span>            enc <span style="color:#f92672">=</span> res
+</span></span><span style="display:flex;"><span>            payload <span style="color:#f92672">+=</span> bytes([i])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            res <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>io<span style="color:#f92672">.</span>recv()
+</span></span><span style="display:flex;"><span>IV_ENC <span style="color:#f92672">=</span> pwn<span style="color:#f92672">.</span>xor(enc , payload)
+</span></span><span style="display:flex;"><span>cipher <span style="color:#f92672">=</span> pwn<span style="color:#f92672">.</span>xor(IV_ENC , <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;FLAG&#34;</span>)[:<span style="color:#ae81ff">4</span>]
+</span></span><span style="display:flex;"><span>print(cipher<span style="color:#f92672">.</span>hex())
+</span></span><span style="display:flex;"><span>io<span style="color:#f92672">.</span>sendline(cipher<span style="color:#f92672">.</span>hex()<span style="color:#f92672">.</span>encode())
+</span></span><span style="display:flex;"><span>io<span style="color:#f92672">.</span>interactive()
 </span></span></code></pre></div></section>
 
   
@@ -378,6 +426,12 @@
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
       href="https://leo950413.github.io/tags/pwn"
       >Pwn</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://leo950413.github.io/tags/crypto"
+      >Crypto</a
     >
     
   </footer>
