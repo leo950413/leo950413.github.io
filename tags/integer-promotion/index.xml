@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Integer Promotion on Tech101</title>
+    <link>https://leo950413.github.io/tags/integer-promotion/</link>
+    <description>Recent content in Integer Promotion on Tech101</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://leo950413.github.io/tags/integer-promotion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Low-Level std::cout and Integer Promotion in C</title>
+      <link>https://leo950413.github.io/post/c-class-w2-note/w2/</link>
+      <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://leo950413.github.io/post/c-class-w2-note/w2/</guid>
+      <description>A brief look at std::cout at the assembly level and integer promotion in C, with key examples and insights.</description>
+    </item>
+  </channel>
+</rss>
