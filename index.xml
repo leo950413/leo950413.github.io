@@ -13,7 +13,7 @@
       <link>http://localhost:1313/post/caculus-note/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/post/caculus-note/</guid>
-      <description>Derivatives of arcsin and arctan derived using inverse function properties.</description>
+      <description>Derivatives and integrals of trig functions derived using substitution.</description>
     </item>
     <item>
       <title>Low-Level std::cout and Integer Promotion in C</title>
