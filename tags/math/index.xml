@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Math on Tech101</title>
-    <link>http://localhost:1313/tags/math/</link>
+    <link>https://leo950413.github.io/tags/math/</link>
     <description>Recent content in Math on Tech101</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://leo950413.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The derivative and integral of trig-function</title>
-      <link>http://localhost:1313/post/caculus-note/</link>
+      <link>https://leo950413.github.io/post/caculus-note/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/caculus-note/</guid>
+      <guid>https://leo950413.github.io/post/caculus-note/</guid>
       <description>Derivatives and integrals of trig functions derived using substitution.</description>
     </item>
   </channel>

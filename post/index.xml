@@ -2,38 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Tech101</title>
-    <link>http://localhost:1313/post/</link>
+    <link>https://leo950413.github.io/post/</link>
     <description>Recent content in Posts on Tech101</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Nov 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://leo950413.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implementation of sorting algorithm</title>
+      <link>https://leo950413.github.io/post/sort-algo-in-c/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://leo950413.github.io/post/sort-algo-in-c/</guid>
+      <description></description>
+    </item>
     <item>
       <title>The derivative and integral of trig-function</title>
-      <link>http://localhost:1313/post/caculus-note/</link>
+      <link>https://leo950413.github.io/post/caculus-note/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/caculus-note/</guid>
+      <guid>https://leo950413.github.io/post/caculus-note/</guid>
       <description>Derivatives and integrals of trig functions derived using substitution.</description>
     </item>
     <item>
       <title>Low-Level std::cout and Integer Promotion in C</title>
-      <link>http://localhost:1313/post/c-class-note/</link>
+      <link>https://leo950413.github.io/post/c-class-note/</link>
       <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/c-class-note/</guid>
+      <guid>https://leo950413.github.io/post/c-class-note/</guid>
       <description>A brief look at std::cout at the assembly level and integer promotion in C, with key examples and insights.</description>
     </item>
     <item>
       <title>DUCTF writeup</title>
-      <link>http://localhost:1313/post/ductf-writeup/</link>
+      <link>https://leo950413.github.io/post/ductf-writeup/</link>
       <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/ductf-writeup/</guid>
+      <guid>https://leo950413.github.io/post/ductf-writeup/</guid>
       <description>walk through vector overflow</description>
     </item>
     <item>
       <title>在windows上使用Hugo &#43; Github Page架設personal blog</title>
-      <link>http://localhost:1313/post/my-first-post/</link>
+      <link>https://leo950413.github.io/post/my-first-post/</link>
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/my-first-post/</guid>
+      <guid>https://leo950413.github.io/post/my-first-post/</guid>
       <description>架設personal blog的簡單教學</description>
     </item>
   </channel>
