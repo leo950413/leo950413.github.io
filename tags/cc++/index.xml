@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&amp;C&#43;&#43; on Tech101</title>
-    <link>https://leo950413.github.io/tags/cc&#43;&#43;/</link>
+    <link>http://localhost:1313/tags/cc&#43;&#43;/</link>
     <description>Recent content in C&amp;C&#43;&#43; on Tech101</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 26 Sep 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://leo950413.github.io/tags/cc++/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cc++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Low-Level std::cout and Integer Promotion in C</title>
-      <link>https://leo950413.github.io/post/c-class-w2-note/w2/</link>
+      <link>http://localhost:1313/post/c-class-note/</link>
       <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/post/c-class-w2-note/w2/</guid>
+      <guid>http://localhost:1313/post/c-class-note/</guid>
       <description>A brief look at std::cout at the assembly level and integer promotion in C, with key examples and insights.</description>
     </item>
   </channel>

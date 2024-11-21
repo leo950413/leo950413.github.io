@@ -54,7 +54,7 @@
   />
 
   
-  <title>Categories - Tech101</title>
+  <title>The derivative and integral of trig-function - Tech101</title>
 
   
   <meta name="theme-color" />
@@ -63,11 +63,7 @@
   
   
   
-  
-  <meta
-    name="description"
-    content="A personal blog"
-  />
+  <meta name="description" content="Derivatives of arcsin and arctan derived using inverse function properties." />
   <meta name="author" content="17wss" />
   
 
@@ -280,18 +276,135 @@
     >
       
 
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">The derivative and integral of trig-function</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Nov 15, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h3 id="the-definition-of-arc-function">The definition of arc-function</h3>
+<p>$$ \arcsin(\sin(x)) = x \quad \text{if } -\frac{\pi}{2} \leq x \leq \frac{\pi}{2} $$
+$$ \arccos(\cos(x)) = x \quad \text{if } 0 \leq x \leq \pi $$
+$$ \arctan(\tan(x)) = x \quad \text{if } -\frac{\pi}{2} &lt; x &lt; \frac{\pi}{2} $$</p>
+<h3 id="the-derivative-of-inverse-function">The derivative of inverse function</h3>
+<p>Let $ g(x) $ be the inverse function of  $ f(x) $
+$$
+f(g(x)) = x
+$$
+Differentiate both side using chain rule
+$$
+f&rsquo;(g(x))*g&rsquo;(x) = 1
+$$
+$g&rsquo;(x)$ is the derivative of $g(x)$ , so we can move everyting to the right side of equation.
+$$ g&rsquo;(x) = \frac{1}{f&rsquo;(g(x))} $$</p>
+<h3 id="the-derivative-of-arcsinx">The derivative of arcsin(x)</h3>
+<p>Let $ f(x)  =  sin(x) , g(x) = arcsin(x) $
+$$
+arcsin&rsquo;(x) = \frac{1}{cos(arcsin(x))}
+$$
+In the denominator,  we have $cos(arcsin(x))$ also can be written like $$ \sqrt{1-sin^2(arcsin(x))} $$
+Note that $$sin^2(arcsin(x) = (sin(arcsin(x))) ^ 2 $$  Which is equivalent to $x^2$ so we can derive the conclusion
+$$ arcsin(x) = \frac{1}{\sqrt{1-x^2}} $$</p>
+<h3 id="the-dervative-of-arctanx">The dervative of arctan(x)</h3>
+<p>Use the same formula we know that
+$$ arctan&rsquo;(x) = \frac{1}{sec^2(arctan(x))}$$
+From the trig identity
+$$ sec^2(x) = 1 + tan^2(x) $$
+Let $m(x) = sec^2(x) $ , then subsitute $ sec^2(x) $
+$$ arctan&rsquo;(x) = \frac{1}{m(arctan(x))} $$
+Plug $ arctan(x) $ to $m(x)$
+$$ m(arctan(x)) = 1 + tan^2(arctan(x)) \=1 + x^2 $$
+So the final formula is
+$$ arctan&rsquo;(x) = \frac{1}{1 + x^2} $$</p>
+<h3 id="the-u-subsitution">The u-subsitution</h3>
+<p>$$ \int f&rsquo;(g(x))\cdot g&rsquo;(x)\ dx = f(g(x))
+$$</p>
+<h3 id="the-integral-of-tanx">The integral of tan(x)</h3>
+<p>By the definition of $tan(x) = \frac{sin(x)}{cos(x)}$
+$$\int tan(x)dx =  \int \frac{sin(x)}{cos(x)} dx $$
+Let $u = cos(x) , du = -sin(x)dx$
+$$   \int -u^{-1}du = -ln(u) + c $$
+Replace u with the original $cos(x) $ , then we have the integral of $tan(x)$
+$$ \int tan(x)dx = -ln|cos(x)| +c $$</p>
+<h3 id="the-integral-of-secx">The integral of sec(x)</h3>
+<p>To find the integral of $ sec(x) $ , multiply $ \frac{sec(x) + tan(x)}{sec(x) + tan(x)} $</p>
+<p>$$ \int sec(x)dx = \int \frac {sec^2(x) + sec(x)tan(x)}{sec(x)+tan(x)}dx  $$
+Let $u = sec(x) + tan(x) , du = (sec^2(x) + sec(x)tan(x))dx$
+$$ \int sec(x)dx =\int \frac {1}{u} du = ln|u| + C =ln|sec(x)+tan(x) | + C $$</p>
+</section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/math"
+      >Math</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/calculus"
+      >Calculus</a
+    >
+    
+  </footer>
+  
+
+  
+  
+
+  
+  
+
+  
+  
+  <div class="mt-24" id="graphcomment"></div>
+  <script type="text/javascript">
+    var __semio__params = {
+      graphcommentId: 'YOUR_GRAPH_COMMENT_ID',
+      behaviour: {
+        
+      },
+      
+    };
+
+    function __semio__onload() {
+      __semio__gc_graphlogin(__semio__params);
+    }
+
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
+    })();
+  </script>
+  
+
+  
 
 
-
-
-
-
-
-
- 
-
-
-
+  
+</article>
 
 
     </main>
