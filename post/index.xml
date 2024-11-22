@@ -13,7 +13,7 @@
       <link>https://leo950413.github.io/post/sort-algo-in-c/</link>
       <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
       <guid>https://leo950413.github.io/post/sort-algo-in-c/</guid>
-      <description></description>
+      <description>Sorting algorithm Insertion sort Steps Start with the second element (the first is already &amp;ldquo;sorted&amp;rdquo;). Compare the current element with the elements in the sorted portion of the array. Shift all elements larger than the current element one position to the right. Insert the current element in its correct position. Repeat for all elements. Implementation void insertionSort(int *arr, int size) { for (int i = 1; i &amp;lt; size; i++) { int key = arr[i]; int j = i - 1; // move every element forward while (j &amp;gt;= 0 &amp;amp;&amp;amp; arr[j] &amp;gt; key) { arr[j + 1] = arr[j]; j--; } // plug in the element arr[j + 1] = key; } } Selection algorithm Steps Start with the first element of the array.</description>
     </item>
     <item>
       <title>The derivative and integral of trig-function</title>
