@@ -274,10 +274,9 @@
     
   </header>
 
-  <section><h2 id="week2-c-class-note">Week2 C Class Note</h2>
-<h3 id="stdcout-function-in-a-low-level-respective">std::cout function in a low level respective</h3>
+  <section><h3 id="stdcout-function-in-a-low-level-respective">std::cout function in a low level respective</h3>
 <hr>
-<h4 id="print-two-constant-numbers">print two constant numbers</h4>
+<h4 id="print-two-constant-numbers">Print two constant numbers</h4>
 <pre tabindex="0"><code>-- include&lt;all_stuff.h&gt; --
 using namespace std;
 
@@ -293,14 +292,14 @@ int main(){
    0x00000000000011a5 &lt;+28&gt;:    mov    esi,0x3
    0x00000000000011aa &lt;+33&gt;:    mov    rdi,rax
    0x00000000000011ad &lt;+36&gt;:    call   0x1090 &lt;_ZNSolsEi@plt&gt;
-</code></pre><h4 id="combine-two-strings">combine two strings</h4>
-<pre tabindex="0"><code>-- include&lt;all_stuff.h&gt; --
-using namespace std;
-
-int main(){
-        cout &lt;&lt; &#34;a&#34; &lt;&lt; &#34;b&#34;;
-}
-</code></pre><pre tabindex="0"><code>   0x0000000000001191 &lt;+8&gt;:     lea    rax,[rip+0xe6c]        # 0x2004
+</code></pre><h4 id="combine-two-strings">Combine two strings</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include&lt;iostream.h&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;b&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><pre tabindex="0"><code>   0x0000000000001191 &lt;+8&gt;:     lea    rax,[rip+0xe6c]        # 0x2004
    0x0000000000001198 &lt;+15&gt;:    mov    rsi,rax
    0x000000000000119b &lt;+18&gt;:    lea    rax,[rip+0x2e9e]        # 0x4040 &lt;_ZSt4cout@GLIBCXX_3.4&gt;
    0x00000000000011a2 &lt;+25&gt;:    mov    rdi,rax
@@ -311,13 +310,13 @@ int main(){
    0x00000000000011b7 &lt;+46&gt;:    mov    rdi,rdx
    0x00000000000011ba &lt;+49&gt;:    call   0x1080 &lt;_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc@plt&gt;
 </code></pre><h4 id="combine-a-string-and-a-number">combine a string and a number</h4>
-<pre tabindex="0"><code>-- include&lt;all_stuff.h&gt; --
-using namespace std;
-
-int main(){
-        cout &lt;&lt; &#34;A&#34; &lt;&lt; 3;
-}
-</code></pre><pre tabindex="0"><code>   0x00000000000011b1 &lt;+8&gt;:     lea    rax,[rip+0xe4c]        # 0x2004
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include&lt;iostream.h&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>        cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;A&#34;</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#ae81ff">3</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><pre tabindex="0"><code>   0x00000000000011b1 &lt;+8&gt;:     lea    rax,[rip+0xe4c]        # 0x2004
    0x00000000000011b8 &lt;+15&gt;:    mov    rsi,rax
    0x00000000000011bb &lt;+18&gt;:    lea    rax,[rip+0x2e7e]        # 0x4040 &lt;_ZSt4cout@GLIBCXX_3.4&gt;
    0x00000000000011c2 &lt;+25&gt;:    mov    rdi,rax
@@ -365,9 +364,9 @@ int main()
 </code></pre><pre tabindex="0"><code>a = ?
 b = ?
 Not Same 
-</code></pre><h2 id="external-resources">external resources</h2>
-<p><a href="https://stackoverflow.com/questions/69310956/printf-with-short-integer-compiler-warning">https://stackoverflow.com/questions/69310956/printf-with-short-integer-compiler-warning</a>
-<a href="https://www.geeksforgeeks.org/integer-promotions-in-c/">https://www.geeksforgeeks.org/integer-promotions-in-c/</a></p>
+</code></pre><h2 id="external-resources">External resources</h2>
+<p><a href="https://stackoverflow.com/questions/69310956/printf-with-short-integer-compiler-warning">printf-with-short-integer-compiler-warning</a></p>
+<p><a href="https://www.geeksforgeeks.org/integer-promotions-in-c/">integer-promotions-in-c</a></p>
 </section>
 
   
@@ -376,8 +375,14 @@ Not Same
      
     <a
       class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="https://leo950413.github.io/tags/cc&#43;&#43;"
-      >C&amp;C&#43;&#43;</a
+      href="https://leo950413.github.io/tags/c"
+      >c</a
+    >
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="https://leo950413.github.io/tags/c&#43;&#43;"
+      >c&#43;&#43;</a
     >
      
     <a
