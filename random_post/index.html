@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect to a Random Post</title>
+</head>
+<body>
+
+<h1>Redirecting to a Random Post...</h1>
+
+<script>
+    async function fetchSitemap() {
+        try {
+            // Fetch the sitemap.xml file (assumed to be available at the root)
+            const response = await fetch('/sitemap.xml');
+            const xmlText = await response.text();
+            
+            // Define a regex pattern to match valid post URLs
+            const regex = /https:\/\/leo950413\.github\.io\/post\/[a-zA-Z0-9\-]+/g;
+            
+            // Use regex to find all matching URLs in the sitemap
+            const matches = xmlText.match(regex);
+
+            // If there are matches, redirect to a random URL
+            if (matches && matches.length > 0) {
+                redirectToRandomGetURL(matches);
+            } else {
+                console.error("No valid URLs found in sitemap.");
+            }
+        } catch (error) {
+            console.error('Error fetching sitemap:', error);
+        }
+    }
+
+    function redirectToRandomGetURL(urls) {
+        // Select a random URL from the array
+        const randomUrl = urls[Math.floor(Math.random() * urls.length)];
+        
+        // Redirect to the random URL
+        window.location.href = randomUrl;
+    }
+
+    // Start the process by fetching the sitemap
+    fetchSitemap();
+</script>
+
+</body>
+</html>
