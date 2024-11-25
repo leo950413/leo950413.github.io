@@ -1,0 +1,385 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title> - Tech101</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="GlacierCTF - rsag In the given code
+def generate_primes(): while True: p = getPrime() q = (2*p) &#43; 1 r = (2*q) &#43; 1 s = (2*r) &#43; 1 if isPrime(q) and isPrime(r) and isPrime(s): break return (p, q, r, s) $$ n = p * q * r * s = p(2p&#43;1)(4p&#43;3)(8p&#43;7)$$
+To find $\phi(n)$ , first need to find $p,q,r,s$ that is already a prime , then $$\phi(n) = (p-1)(q-1)(r-1)(s-1)$$ Use z3 to find the solution of polynomial equation." />
+  <meta name="author" content="17wss" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://leo950413.github.io/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://leo950413.github.io/theme.svg" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://raw.githubusercontent.com/leo950413/leo950413.github.io/refs/heads/master/3.jpg" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="https://leo950413.github.io/github.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://leo950413.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://leo950413.github.io/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.128.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://leo950413.github.io/"
+      >Tech101</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/random_post/"
+        >Random post</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/leo950413"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5"></h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="glacierctf---rsag">GlacierCTF - rsag</h1>
+<p>In the given code</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">generate_primes</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>        p <span style="color:#f92672">=</span> getPrime()
+</span></span><span style="display:flex;"><span>        q <span style="color:#f92672">=</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>p) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        r <span style="color:#f92672">=</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>q) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        s <span style="color:#f92672">=</span> (<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>r) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> isPrime(q) <span style="color:#f92672">and</span> isPrime(r) <span style="color:#f92672">and</span> isPrime(s):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> (p, q, r, s)
+</span></span></code></pre></div><p>$$ n  = p * q * r * s = p(2p+1)(4p+3)(8p+7)$$</p>
+<p>To find $\phi(n)$ , first need to find $p,q,r,s$ that is already a prime ,  then
+$$\phi(n) = (p-1)(q-1)(r-1)(s-1)$$
+Use z3 to find the solution of polynomial equation.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> z3 <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> Solver()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p <span style="color:#f92672">=</span> Int(<span style="color:#e6db74">&#39;p&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s<span style="color:#f92672">.</span>add(<span style="color:#ae81ff">64</span><span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p <span style="color:#f92672">+</span> <span style="color:#ae81ff">136</span><span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p <span style="color:#f92672">+</span> <span style="color:#ae81ff">94</span><span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p <span style="color:#f92672">+</span> <span style="color:#ae81ff">21</span><span style="color:#f92672">*</span>p <span style="color:#f92672">==</span> N)
+</span></span><span style="display:flex;"><span>s<span style="color:#f92672">.</span>check()
+</span></span><span style="display:flex;"><span>sol <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>model()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># p = 9352496155192295944243473644483853835662636576410969996619180877861158926367873785037099054018741236476166923118647057249968914650337399039210616026612969</span>
+</span></span></code></pre></div><p>Then use $phi(n)$ and the given $e$ to find $d$, decrypt the flag.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> z3 <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Util.number <span style="color:#f92672">import</span> long_to_bytes
+</span></span><span style="display:flex;"><span>N <span style="color:#f92672">=</span> <span style="color:#ae81ff">489654925303072532553659432557377999607856370197579144782976005904927235244321459117898721690940319487769632950077647476152880207627385231603017537961906244964117707813500615680799967895028255666319186794462243666159201392490299439947399915406223652423977002396844720487588735149486903743362109592536081726574342051928022071576485169655694281378301551060632699138055044915993078059902577590451519251321215765308977494770310317350866241246677761542212605478044672014913289740381478940929584556588858045439572693806615268502627912952686133840081188641597461343817750411035667135310831687533531094008308185320371643348451</span>
+</span></span><span style="display:flex;"><span>CT <span style="color:#f92672">=</span> <span style="color:#ae81ff">58535947031303233853656030097871859886777764034955095086618901763996192727846608049414977429851683454541344096765319691912454768331685486037922533236779909508856486986528041125267338846421238077083738092020495236946742989769815669001100361743526446503248639704900983287986142636083524250650662602975802778548032518674346903013262799229594298599457623347987250272218522320743415393958131916181915804368140008312975210397791293701839101635851486434802271100141743496402698229558250485987421664294229816166263965806962242894230766553316312608696594536239328785792283453559549564751529321240567418095487324718881437825650</span>
+</span></span><span style="display:flex;"><span>e <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x10001</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">=</span> Solver()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>p <span style="color:#f92672">=</span> Int(<span style="color:#e6db74">&#39;p&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s<span style="color:#f92672">.</span>add(<span style="color:#ae81ff">64</span><span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p <span style="color:#f92672">+</span> <span style="color:#ae81ff">136</span><span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p <span style="color:#f92672">+</span> <span style="color:#ae81ff">94</span><span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>p <span style="color:#f92672">+</span> <span style="color:#ae81ff">21</span><span style="color:#f92672">*</span>p <span style="color:#f92672">==</span> N)
+</span></span><span style="display:flex;"><span>s<span style="color:#f92672">.</span>check()
+</span></span><span style="display:flex;"><span>sol <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>model()
+</span></span><span style="display:flex;"><span>p <span style="color:#f92672">=</span> sol[p]<span style="color:#f92672">.</span>as_long()
+</span></span><span style="display:flex;"><span>phi <span style="color:#f92672">=</span> (p<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>p<span style="color:#f92672">*</span>(<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>p <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>)<span style="color:#f92672">*</span>(<span style="color:#ae81ff">8</span><span style="color:#f92672">*</span>p<span style="color:#f92672">+</span><span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">=</span> pow(e ,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> , phi)
+</span></span><span style="display:flex;"><span>print(long_to_bytes(pow(CT, d ,N))<span style="color:#f92672">.</span>decode())
+</span></span></code></pre></div></section>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <div class="giscus mt-24"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="leo950413/leo950413.github.io"
+    data-repo-id="R_kgDOMVSClg"
+    data-category="General"
+    data-category-id="DIC_kwDOMVSCls4CkejD"
+    data-mapping="url"
+    data-strict="1"
+    data-reactions-enabled="0"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="noborder_dark"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script>
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://leo950413.github.io/">Tech101</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

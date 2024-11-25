@@ -307,7 +307,7 @@
 </span></span><span style="display:flex;"><span>conn <span style="color:#f92672">=</span> connect(<span style="color:#e6db74">&#34;2024.ductf.dev&#34;</span>, <span style="color:#ae81ff">30013</span>)
 </span></span><span style="display:flex;"><span>conn<span style="color:#f92672">.</span>sendline(payload)
 </span></span><span style="display:flex;"><span>conn<span style="color:#f92672">.</span>interactive()
-</span></span></code></pre></div><h1 id="challenge-name-decrypt-than-evil">Challenge Name: decrypt than evil</h1>
+</span></span></code></pre></div><h1 id="challenge-name-decrypt-then-evil">Challenge Name: Decrypt then evil</h1>
 <h2 id="brief-overview">Brief overview</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>        ct <span style="color:#f92672">=</span> bytes<span style="color:#f92672">.</span>fromhex(input(<span style="color:#e6db74">&#39;ct: &#39;</span>))
 </span></span><span style="display:flex;"><span>        aes <span style="color:#f92672">=</span> AES<span style="color:#f92672">.</span>new(KEY, AES<span style="color:#f92672">.</span>MODE_CFB, IV, segment_size<span style="color:#f92672">=</span><span style="color:#ae81ff">128</span>)
