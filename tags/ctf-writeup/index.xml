@@ -6,8 +6,15 @@
     <description>Recent content in CTF Writeup on Tech101</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://leo950413.github.io/tags/ctf-writeup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GlacierCTF writeup</title>
+      <link>https://leo950413.github.io/post/glacierctf-writeup/</link>
+      <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://leo950413.github.io/post/glacierctf-writeup/</guid>
+      <description>rsag</description>
+    </item>
     <item>
       <title>DUCTF writeup</title>
       <link>https://leo950413.github.io/post/ductf-writeup/</link>
