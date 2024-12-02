@@ -22,5 +22,12 @@
       <guid>https://leo950413.github.io/post/ductf-writeup/</guid>
       <description>walk through vector overflow</description>
     </item>
+    <item>
+      <title>CybergonCTF writeup</title>
+      <link>https://leo950413.github.io/post/cybergonctf-writeup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://leo950413.github.io/post/cybergonctf-writeup/</guid>
+      <description>some challenge.</description>
+    </item>
   </channel>
 </rss>
