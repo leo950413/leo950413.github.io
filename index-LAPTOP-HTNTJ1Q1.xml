@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech101</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Tech101</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CybergonCTF writeup</title>
+      <link>http://localhost:1313/post/cybergonctf-writeup/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/cybergonctf-writeup/</guid>
+      <description>some challenge.</description>
+    </item>
+    <item>
+      <title>GlacierCTF writeup</title>
+      <link>http://localhost:1313/post/glacierctf-writeup/</link>
+      <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/glacierctf-writeup/</guid>
+      <description>rsag</description>
+    </item>
+    <item>
+      <title>DCM class note</title>
+      <link>http://localhost:1313/post/dcm-note/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/dcm-note/</guid>
+      <description>Brief introduction to relation</description>
+    </item>
+    <item>
+      <title>Implementation of sorting algorithm</title>
+      <link>http://localhost:1313/post/sort-algo-in-c/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/sort-algo-in-c/</guid>
+      <description>Sorting algorithm Insertion sort Steps Start with the second element (the first is already &amp;ldquo;sorted&amp;rdquo;). Compare the current element with the elements in the sorted portion of the array. Shift all elements larger than the current element one position to the right. Insert the current element in its correct position. Repeat for all elements. Implementation void insertionSort(int *arr, int size) { for (int i = 1; i &amp;lt; size; i++) { int key = arr[i]; int j = i - 1; // move every element forward while (j &amp;gt;= 0 &amp;amp;&amp;amp; arr[j] &amp;gt; key) { arr[j + 1] = arr[j]; j--; } // plug in the element arr[j + 1] = key; } } Selection algorithm Steps Start with the first element of the array.</description>
+    </item>
+    <item>
+      <title>The derivative and integral of trig-function</title>
+      <link>http://localhost:1313/post/caculus-note/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/caculus-note/</guid>
+      <description>Derivatives and integrals of trig functions derived using substitution.</description>
+    </item>
+    <item>
+      <title>Low-Level std::cout and Integer Promotion in C</title>
+      <link>http://localhost:1313/post/c-class-note/</link>
+      <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/c-class-note/</guid>
+      <description>A brief look at std::cout at the assembly level and integer promotion in C, with key examples and insights.</description>
+    </item>
+    <item>
+      <title>DUCTF writeup</title>
+      <link>http://localhost:1313/post/ductf-writeup/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/ductf-writeup/</guid>
+      <description>walk through vector overflow</description>
+    </item>
+    <item>
+      <title>在Windows上使用Hugo &#43; Github Page架設personal blog</title>
+      <link>http://localhost:1313/post/my-first-post/</link>
+      <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/my-first-post/</guid>
+      <description>架設personal blog的簡單教學</description>
+    </item>
+  </channel>
+</rss>

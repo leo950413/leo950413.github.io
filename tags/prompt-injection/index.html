@@ -41,7 +41,7 @@
   style="--bg: #faf8f1"
   lang="en-us"
 >
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta
@@ -50,7 +50,7 @@
   />
 
   
-  <title>DCM class note - Tech101</title>
+  <title>Prompt Injection - Tech101</title>
 
   
   <meta name="theme-color" />
@@ -59,7 +59,11 @@
   
   
   
-  <meta name="description" content="Brief introduction to relation" />
+  
+  <meta
+    name="description"
+    content="A personal blog"
+  />
   <meta name="author" content="17wss" />
   
 
@@ -146,6 +150,40 @@
   <meta name="generator" content="Hugo 0.128.2">
 
   
+  
+  
+  
+  
+
+
+  
+  
+  <meta itemprop="name" content="Prompt Injection">
+  <meta itemprop="datePublished" content="2025-04-07T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-04-07T00:00:00+00:00">
+  
+  <meta property="og:url" content="https://leo950413.github.io/tags/prompt-injection/">
+  <meta property="og:site_name" content="Tech101">
+  <meta property="og:title" content="Prompt Injection">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Prompt Injection">
+
+  
+  
+  <link
+    rel="alternate"
+    type="application/rss&#43;xml"
+    href="https://leo950413.github.io/tags/prompt-injection/index.xml"
+    title="Tech101"
+  />
+  
+  
+  <link rel="canonical" href="https://leo950413.github.io/tags/prompt-injection/" />
   
   
 </head>
@@ -258,141 +296,33 @@
     >
       
 
-<article>
-  <header class="mb-16">
-    <h1 class="!my-0 pb-2.5">DCM class note</h1>
 
-    
-    <div class="text-sm antialiased opacity-60">
-      
-      <time>Nov 23, 2024</time>
-      
-      
-      
-      
-    </div>
-    
-  </header>
 
-  <section><h2 id="relation-and-function">Relation and function</h2>
-<h4 id="cartesian-product">Cartesian Product</h4>
-<p>Given to set $A,B$ the Cartesian Product of it is
-$$ A\times B = {(a,b)| a\in A , b\in B}$$</p>
-<h4 id="ordered-pair">Ordered pair</h4>
-<p>If $ (a_1,b_1) = (a_2 , b_2) $ , then $a_1 = a_2 , \ b_1 =b_2 $.</p>
-<h4 id="relation">Relation</h4>
-<p>$$ A:{1,2,3} $$
-$$ B:{a,b,c} $$</p>
-<p>$$A \times B = {(1,a) , (2,b) , (3,a) , (3,c)} $$</p>
-<p>All subset of $A \times B $ is a relation from $ A $ to $ B $,
-${(1,a) , (3,c)}$ is one of them.
-$ A \times A $ can written as $ A^2 $</p>
-<h4 id="power-set">Power set</h4>
-<p>Denote as $p(S)$ is the set of all possible subset of S
-The number of relation between $A$,$B$
-$$
-|A| = m , |B|= n
-$$
-$$
-P(A\times B) =  2 ^ {mn}
-$$</p>
-<h4 id="function-mapping">Function (mapping)</h4>
-<p>$$ A = {x_1 , x_2 , &hellip; ,  x_n}$$
-$$ B =  {y_1 , y_2 , &hellip; ,  y_n} $$
-Every element of A appears exactly once as the first component of an ordered pair in the relation.
-A function from $A$ to $B$ is denoted as $f(A) = B$.</p>
-<h4 id="range">Range</h4>
-<p>The set of all values that the function actually outputs when applied to elements from the domain, It is a subset of the codomain.</p>
-<h4 id="codomain">Codomain</h4>
-<p>The set of all possible values that could theoretically be the output of the function.</p>
-<p>For function $f(x) = x^2 , x\in\mathbb{Z}$</p>
-<p>The codomain is $ {{x\in\mathbb{Z} , x&gt;0}.} $</p>
-<p>The range is ${x ^2 , x\in\mathbb{Z}}$</p>
-<h4 id="one-to-one-injective">One to One (injective):</h4>
-<p>Every element in the domain maps to a unique element in the codomain.</p>
-<p>$$A = {1, 2, 3} $$</p>
-<p>$$B = {a,b,c,d} $$
-$ f(A)\to B = {(1,a) , (2,b) , (3,c) }$ is a injective function.</p>
-<p>$ g(A)\to B = {(1,a) , (2,b) , (3,b) }$ is not a injective function.</p>
-<p>Note that $ f(A)\to B $ is not injective if $n(A) &gt; n(B)$.</p>
-<h4 id="onto-surjective">Onto (surjective)</h4>
-<p>Every element in the codomain has at least one corresponding element in the domain.</p>
-<p>$$A = {1, 2, 3 , 4} $$</p>
-<p>$$B = {a,b,c} $$
-$ f(A)\to B = {(1,a) , (2,b) , (3,c) }$ is a injective function.</p>
-<p>$ g(A)\to B = {(1,a) , (2,b) , (3,b) }$ is not a injective function.
-Note that $ f(A)\to B $ is not surjective if $n(B) &gt; n(A)$.</p>
-<h3 id="external-resource">External resource:</h3>
-<p>
-
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/OixshZzH8t0?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
-    </div>
+<h1 class="mb-16">#Prompt Injection</h1>
 
 
 
-    
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/dbihQ6tiRJ0?autoplay=0&controls=1&end=0&loop=0&mute=0&start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
-      ></iframe>
-    </div>
-</p>
+
+
+
+
+ 
+
+
+
+
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  
+  <h2 class="!my-0 pb-1 font-bold !leading-none">Exploiting Vulnerabilities in Twitch Bots: A Discovery and Technical Analysis</h2>
+  <time class="text-sm antialiased opacity-60"
+    >Apr 7, 2025</time
+  >
+  <a class="absolute inset-0 text-[0]" href="https://leo950413.github.io/post/llm-attack/exploit/">Exploiting Vulnerabilities in Twitch Bots: A Discovery and Technical Analysis</a>
 </section>
 
-  
-  
-  <footer class="mt-12 flex flex-wrap">
-     
-    <a
-      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="https://leo950413.github.io/tags/dcm"
-      >DCM</a
-    >
-     
-    <a
-      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
-      href="https://leo950413.github.io/tags/math"
-      >Math</a
-    >
-    
-  </footer>
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
 
 
-  
-  <div class="giscus mt-24"></div>
-  <script
-    src="https://giscus.app/client.js"
-    data-repo="leo950413/leo950413.github.io"
-    data-repo-id="R_kgDOMVSClg"
-    data-category="General"
-    data-category-id="DIC_kwDOMVSCls4CkejD"
-    data-mapping="url"
-    data-strict="1"
-    data-reactions-enabled="0"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="noborder_dark"
-    data-lang="zh-CN"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async
-  ></script>
-  
-</article>
+
 
 
     </main>
@@ -401,7 +331,7 @@ Note that $ f(A)\to B $ is not surjective if $n(B) &gt; n(A)$.</p>
   class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
 >
   <div class="mr-auto">
-    &copy; 2024
+    &copy; 2025
     <a class="link" href="https://leo950413.github.io/">Tech101</a>
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

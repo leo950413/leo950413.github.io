@@ -6,35 +6,28 @@
     <description>Recent content in Posts on Tech101</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://leo950413.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploiting Vulnerabilities in Twitch Bots: A Discovery and Technical Analysis</title>
+      <link>https://leo950413.github.io/post/llm-attack/exploit/</link>
+      <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://leo950413.github.io/post/llm-attack/exploit/</guid>
+      <description>The article discusses a vulnerability in Twitch bots, where administrative privileges can be exploited by manipulating queries, causing unintended actions like clearing the chat.</description>
+    </item>
+    <item>
+      <title>CybergonCTF writeup</title>
+      <link>https://leo950413.github.io/post/cybergonctf-writeup/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://leo950413.github.io/post/cybergonctf-writeup/</guid>
+      <description>some challenge.</description>
+    </item>
     <item>
       <title>GlacierCTF writeup</title>
       <link>https://leo950413.github.io/post/glacierctf-writeup/</link>
       <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
       <guid>https://leo950413.github.io/post/glacierctf-writeup/</guid>
       <description>rsag</description>
-    </item>
-    <item>
-      <title>DCM class note</title>
-      <link>https://leo950413.github.io/post/dcm-note/</link>
-      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/post/dcm-note/</guid>
-      <description>Brief introduction to relation</description>
-    </item>
-    <item>
-      <title>Implementation of sorting algorithm</title>
-      <link>https://leo950413.github.io/post/sort-algo-in-c/</link>
-      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/post/sort-algo-in-c/</guid>
-      <description>Sorting algorithm Insertion sort Steps Start with the second element (the first is already &amp;ldquo;sorted&amp;rdquo;). Compare the current element with the elements in the sorted portion of the array. Shift all elements larger than the current element one position to the right. Insert the current element in its correct position. Repeat for all elements. Implementation void insertionSort(int *arr, int size) { for (int i = 1; i &amp;lt; size; i++) { int key = arr[i]; int j = i - 1; // move every element forward while (j &amp;gt;= 0 &amp;amp;&amp;amp; arr[j] &amp;gt; key) { arr[j + 1] = arr[j]; j--; } // plug in the element arr[j + 1] = key; } } Selection algorithm Steps Start with the first element of the array.</description>
-    </item>
-    <item>
-      <title>The derivative and integral of trig-function</title>
-      <link>https://leo950413.github.io/post/caculus-note/</link>
-      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/post/caculus-note/</guid>
-      <description>Derivatives and integrals of trig functions derived using substitution.</description>
     </item>
     <item>
       <title>Low-Level std::cout and Integer Promotion in C</title>
@@ -56,13 +49,6 @@
       <pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
       <guid>https://leo950413.github.io/post/my-first-post/</guid>
       <description>架設personal blog的簡單教學</description>
-    </item>
-    <item>
-      <title>CybergonCTF writeup</title>
-      <link>https://leo950413.github.io/post/cybergonctf-writeup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/post/cybergonctf-writeup/</guid>
-      <description>some challenge.</description>
     </item>
   </channel>
 </rss>

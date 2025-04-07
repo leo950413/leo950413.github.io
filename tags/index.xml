@@ -6,8 +6,22 @@
     <description>Recent content in Tags on Tech101</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://leo950413.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prompt Injection</title>
+      <link>https://leo950413.github.io/tags/prompt-injection/</link>
+      <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://leo950413.github.io/tags/prompt-injection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CTF Writeup</title>
+      <link>https://leo950413.github.io/tags/ctf-writeup/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://leo950413.github.io/tags/ctf-writeup/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Crypto</title>
       <link>https://leo950413.github.io/tags/crypto/</link>
@@ -16,52 +30,17 @@
       <description></description>
     </item>
     <item>
-      <title>CTF Writeup</title>
-      <link>https://leo950413.github.io/tags/ctf-writeup/</link>
-      <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/tags/ctf-writeup/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>DCM</title>
-      <link>https://leo950413.github.io/tags/dcm/</link>
-      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/tags/dcm/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Math</title>
-      <link>https://leo950413.github.io/tags/math/</link>
-      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/tags/math/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Algorithm</title>
-      <link>https://leo950413.github.io/tags/algorithm/</link>
-      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/tags/algorithm/</guid>
+      <title>Assembler</title>
+      <link>https://leo950413.github.io/tags/assembler/</link>
+      <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://leo950413.github.io/tags/assembler/</guid>
       <description></description>
     </item>
     <item>
       <title>C</title>
       <link>https://leo950413.github.io/tags/c/</link>
-      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/tags/c/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Calculus</title>
-      <link>https://leo950413.github.io/tags/calculus/</link>
-      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/tags/calculus/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Assembler</title>
-      <link>https://leo950413.github.io/tags/assembler/</link>
       <pubDate>Thu, 26 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/tags/assembler/</guid>
+      <guid>https://leo950413.github.io/tags/c/</guid>
       <description></description>
     </item>
     <item>

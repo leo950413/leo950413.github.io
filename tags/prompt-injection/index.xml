@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prompt Injection on Tech101</title>
+    <link>https://leo950413.github.io/tags/prompt-injection/</link>
+    <description>Recent content in Prompt Injection on Tech101</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 07 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://leo950413.github.io/tags/prompt-injection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploiting Vulnerabilities in Twitch Bots: A Discovery and Technical Analysis</title>
+      <link>https://leo950413.github.io/post/llm-attack/exploit/</link>
+      <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://leo950413.github.io/post/llm-attack/exploit/</guid>
+      <description>The article discusses a vulnerability in Twitch bots, where administrative privileges can be exploited by manipulating queries, causing unintended actions like clearing the chat.</description>
+    </item>
+  </channel>
+</rss>
