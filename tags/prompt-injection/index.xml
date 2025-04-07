@@ -10,9 +10,9 @@
     <atom:link href="https://leo950413.github.io/tags/prompt-injection/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exploiting Vulnerabilities in Twitch Bots: A Discovery and Technical Analysis</title>
-      <link>https://leo950413.github.io/post/llm-attack/exploit/</link>
+      <link>https://leo950413.github.io/post/llm-attack/</link>
       <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://leo950413.github.io/post/llm-attack/exploit/</guid>
+      <guid>https://leo950413.github.io/post/llm-attack/</guid>
       <description>The article discusses a vulnerability in Twitch bots, where administrative privileges can be exploited by manipulating queries, causing unintended actions like clearing the chat.</description>
     </item>
   </channel>
